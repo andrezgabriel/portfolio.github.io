@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrez Gabriel / portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
+            <li><a href="Andrez Gabriel currículo .pdf" target="_blank" class="menu-link" >Currículo</a></li>
+        </ul>
+
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <div>
+            <img src="img/perfil.jpg" alt="Foto de Andrez Gabriel" class="foto-perfil">
+            <h1>Andrez Cavalcanti</h1>
+            <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p>Meu nome é Andrez Gabriel, tenho 19 anos e atualmente estou me dedicando aos estudos em Programação Full Stack. Tenho grande interesse pelo mundo da tecnologia e venho me aprofundando em áreas como desenvolvimento web, tanto no front-end quanto no back-end.
+               Estou em busca de uma oportunidade de estágio ou primeiro emprego que me permita aplicar os conhecimentos adquiridos, desenvolver novas habilidades e crescer profissionalmente. Sou uma pessoa dedicada, proativa e com muita vontade de aprender. Acredito que, com empenho e prática, posso contribuir positivamente com qualquer equipe ou projeto.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Alguns Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="img/download.png" alt="" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">interface TikTok</h3>
+                    <p class="paragrafo-projetos">Projeto facultativo que consistia em recriar a interface da rede
+                        social TikTok.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/sddefault.jpg" alt="" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Tela De Login DARK</h3>
+                    <p class="paragrafo-projetos">projeto que consiste em criar uma tela de login com o tema DARK,
+                        design responsivo e animação.</p>
+                </div>
+            </div>
+
+             <div class="projetos-card">
+                <img src="img/download.jfif" alt="" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Biblioteca Digital</h3>
+                    <p class="paragrafo-projetos">Projeto facultativo que consiste em criar um aplicativo para uma biblioteca para fazer o controle de empréstimos e devolução de livros. </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form action="" class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Digite seu Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea placeholder="Digite Sua Mensagem" class="campo-form" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-enviar">
+                Enviar Mensagem No WhatsApp
+
+            </button>
+        </form>
+    </section>
+
+    <script>
+        function enviarwhats(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+    
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5581999706477'; // Substitua pelo seu número de telefone
+    
+            const texto = `Olá, ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+    
+            const urlWhatsApp = `https://wa.me/${telefone}?text=${msgFormatada}`;
+    
+            window.open(urlWhatsApp, '_blank');
+    
+            console.log(urlWhatsApp);
+        }
+    </script>
+
+</body>
+
+</html>
